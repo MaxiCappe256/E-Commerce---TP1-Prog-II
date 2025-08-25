@@ -1,6 +1,6 @@
 const hamburguesa = document.querySelector(".hamburguesa");
 const menu = document.querySelector('.navbar__links');
-const links = document.querySelector('.navbar__link');
+const links = document.querySelectorAll('.navbar__link');
 
 hamburguesa.addEventListener('click', () => {
     menu.classList.toggle('active');
@@ -9,7 +9,7 @@ hamburguesa.addEventListener('click', () => {
 
 links.forEach(link => {
     link.addEventListener('click', () => {
-        menu.classList.toggle('active');
+        menu.classList.remove('active');
     })
 })
 
