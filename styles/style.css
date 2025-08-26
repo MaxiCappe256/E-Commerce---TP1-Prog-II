@@ -125,8 +125,8 @@ textarea {
     position: absolute;
     top: 0;
     padding: 2rem;
-    right: -100%;
-    display: flex;
+    right: 0;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -141,7 +141,7 @@ textarea {
 }
 
 .navbar__links.active {
-    right: 0;
+   display: flex;
 }
 
 .navbar__link {
@@ -211,11 +211,11 @@ textarea {
 .descuento__texto::before {
     content: '';
     position: absolute;
-    height: 3.5rem;
+    height: 4.5rem;
     width: 2px;
     background-color: white;
     top: 0;
-    left: -1.2rem;
+    left: -20px;
 }
 
 .hero__icon {
