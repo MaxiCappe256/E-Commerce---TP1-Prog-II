@@ -251,6 +251,31 @@ textarea {
 
 }
 
+@media (max-width: 480px) {
+    .grid__products{
+        
+        grid-template-columns: repeat(1, 1fr);
+    
+    }
+}
+
+@media (max-width: 992px) {
+    .grid__products{
+        
+        grid-template-columns: repeat(3, 1fr);
+    
+    }
+}
+
+@media (max-width: 1200px) {
+    .grid__products{
+        
+        grid-template-columns: repeat(4, 1fr);
+    
+    }
+}
+
+
 .container__product {
     background-color: #efefef;
     border: 1px solid rgb(194, 194, 194);
