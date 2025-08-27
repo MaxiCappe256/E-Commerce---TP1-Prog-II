@@ -1,10 +1,9 @@
 const contenedor_productos = document.getElementById('contenedor_productos');
 
-
 fetch("https://sneakers-api-cmkf.onrender.com/")
     .then(response => response.json())
     .then(products => {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 20; i++) {
             contenedor_productos.innerHTML += `
                 <div class="container__product">
                     <div class="product__container-img primer-producto">
@@ -16,6 +15,6 @@ fetch("https://sneakers-api-cmkf.onrender.com/")
                         <a href="./pages/producto.html?id=${products[i].id}" target="_blank" class="info__btn">Ver más</a>
                     </div>
                 </div>
-        `
+            `
         }
     })
