@@ -3,10 +3,10 @@ const params = new URLSearchParams(window.location.search);
 const productId = parseInt(params.get('id'));
 
 fetch("https://sneakers-api-cmkf.onrender.com/get-sneaker/" + productId)
-.then(response => response.json())
-.then(product => {
-    console.log(product);
-    producto.innerHTML = `
+    .then(response => response.json())
+    .then(product => {
+        console.log(product);
+        producto.innerHTML = `
         <div class="container-img">
 
             <div class="container-img__principal">
@@ -16,8 +16,8 @@ fetch("https://sneakers-api-cmkf.onrender.com/get-sneaker/" + productId)
             </div>
 
             <div class="container-img__secundarias">
-                ${product.image.slice(1).map((img, i) => 
-                    `<a href="${img}">
+                ${product.image.slice(1).map((img, i) =>
+            `<a href="${img}">
                         <img class="container-img__imagen-secundaria" src="${img}" alt="imagen zapatilla">
                     </a>`).join("")}
             </div>
@@ -27,7 +27,8 @@ fetch("https://sneakers-api-cmkf.onrender.com/get-sneaker/" + productId)
             <h3 class="descripcion__titulo">${product.name}</h3>
             <p class="descripcion__talle">${product.sizes.join(" - ")}</p>
             <p class="descripcion__precio">$${product.price}.000</p>
+            <a href="#" class="descripcion__comprar">Comprar</a>
         </div>
-    `
-}
-)
+            `;
+        }
+    )

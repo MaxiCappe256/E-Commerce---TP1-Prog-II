@@ -1,149 +1,155 @@
 <!DOCTYPE html>
-<html lang="es">
+    <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fuente -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
+            <!-- Fuente -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+                rel="stylesheet">
 
-    <!-- Hoja de Estilos -->
-    <link rel="stylesheet" href="styles/style.css">
+            <!-- Hoja de Estilos -->
+            <link rel="stylesheet" href="styles/style.css">
 
-    <!-- Iconos -->
-    <script src="https://kit.fontawesome.com/b12aec4708.js" crossorigin="anonymous"></script>
+            <!-- Iconos -->
+            <script src="https://kit.fontawesome.com/b12aec4708.js" crossorigin="anonymous"></script>
 
-    <title>E-commerce</title>
+            <title>E-commerce</title>
 
-</head>
+        </head>
 
-<body>
-    <header class="header">
-        <div class="header__envio">
-            <p class="header__texto">Envío a todo el País!</p>
-        </div>
+        <body>
+            <header class="header">
+                <div class="header__envio">
+                    <p class="header__texto">Envío a todo el País!</p>
+                </div>
 
-        <nav class="header__navbar">
-            <div class="navbar__links">
-                <a href="index.html" class="navbar__link">Inicio</a>
-                <a href="#productos" class="navbar__link">Productos</a>
-                <a href="#form" class="navbar__link">Formulario</a>
-            </div>
-
-            <div class="navbar__container-logo">
-                <img src="assets/logo2.png" alt="imgen logo" class="container-logo__img">
-
-                <h1 class="navbar__title">ChispitaSSJ</h1>
-            </div>
+                <div class="container-navbar">
+                    <nav class="header__navbar">
 
 
+                        <div class="navbar__container-logo">
+                            <img src="assets/logo2.png" alt="imgen logo" class="container-logo__img">
 
-            <div class="navbar__container-icons">
-                <i class="icons-zindex container-icons__icon fa-solid fa-magnifying-glass"></i>
-                <i class="icons-zindex container-icons__icon fa-solid fa-user"></i>
-                <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping"></i>
-                <i class="hamburguesa container-icons__icon fa-solid fa-bars"></i>
-            </div>
-
-            <i class="navbar__close fa-solid fa-x"></i>
-        </nav>
-    </header>
-
-    <main class="main">
-        <section class="hero">
-            <div class="hero__descuento">
-                <i class="hero__icon fa-solid fa-tag"></i>
-                <p class="descuento__texto">50% OFF en tu primer compra<br>30% OFF abonando con transferencia</p>
-            </div>
-        </section>
-
-        <section id="productos" class="grid container">
-            <h2 class="grid__subtitle subtitle">Productos</h2>
-            
-            <div id="contenedor_productos" class="grid__products">
-
-            </div>
-        </section>
-
-        <section id="form" class="form container">
-            <h2 class="form__subtitle subtitle">Formulario</h2>
-            <form class="form__form" action="#">
-                <fieldset class="form__fieldset">
-                    <div class="form__personal-contacts-container">
-                        <legend class="form__legend-datos form__legend">Datos Personales</legend>
-                        <div class="form__container">
-                            <label for="nombre" class="form__label">Nombre:</label>
-                            <input class="form__input" type="text" id="nombre" name="nombre" required
-                                placeholder="Tu nombre...">
+                            <h1 class="navbar__title">ChispitaSSJ</h1>
                         </div>
 
-                        <div class="form__container">
-                            <label for="apellido" class="form__label">Apellido:</label>
-                            <input class="form__input" type="text" id="apellido" name="apellido" required
-                                placeholder="Tu apellido...">
+
+                        <div class="navbar__links">
+                            <a href="index.html" class="navbar__link">Inicio</a>
+                            <a href="#productos" class="navbar__link">Productos</a>
+                            <a href="#form" class="navbar__link">Formulario</a>
                         </div>
 
-                        <div class="form__container">
-                            <label for="edad" class="form__label">Edad:</label>
-                            <input class="form__input" type="number" id="edad" name="edad" required
-                                placeholder="Tu edad...">
+                        <div class="navbar__container-icons">
+                            <i class="icons-zindex container-icons__icon fa-solid fa-magnifying-glass"></i>
+                            <i class="icons-zindex container-icons__icon fa-solid fa-user"></i>
+                            <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping"></i>
+                            <i class="hamburguesa container-icons__icon fa-solid fa-bars"></i>
                         </div>
+
+                        <i class="navbar__close fa-solid fa-x"></i>
+                    </nav>
+                </div>
+
+
+            </header>
+
+            <main class="main">
+                <section class="hero">
+                    <div class="hero__descuento">
+                        <i class="hero__icon fa-solid fa-tag"></i>
+                        <p class="descuento__texto">50% OFF en tu primer compra<br>30% OFF abonando con transferencia</p>
                     </div>
+                </section>
 
-                    <div class="form__contact-container">
-                        <legend class="form__legend form__legend-contact">Contacto</legend>
-                        <div class="form__container">
-                            <label for="email" class="form__label">Email:</label>
-                            <input class="form__input" type="email" id="email" name="email" required
-                                placeholder="Tu email...">
-                        </div>
+                <section id="productos" class="grid container">
+                    <h2 class="grid__subtitle subtitle">Productos</h2>
 
+                    <div id="contenedor_productos" class="grid__products">
 
-                        <div class="form__container">
-                            <label for="telefono" class="form__label">Teléfono:</label>
-                            <input class="form__input" type="tel" id="telefono" name="telefono" required
-                                placeholder="Tu teléfono...">
-                        </div>
-
-                        <div class="form__container">
-                            <label for="direccion" class="form__label">Dirección:</label>
-                            <input class="form__input" type="text" id="direccion" name="direccion" required
-                                placeholder="Tu dirección...">
-                        </div>
                     </div>
-                </fieldset>
-            </form>
-            <div class="form__btns">
-                <a href="#" class="form__btn form__btn-send">Enviar</a>
-                <a href="#" class="form__btn form__btn-clear">Borrar</a>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="footer__text footer__text-title-redes">Seguinos en nuestras redes:</p>
+                </section>
 
-        <div class="footer__container-links">
-            <a href="#"><i class="footer__icon fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="footer__icon fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="footer__icon fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="footer__icon fa-brands fa-youtube"></i></a>
-        </div>
+                <section id="form" class="form container">
+                    <h2 class="form__subtitle subtitle">Formulario</h2>
+                    <form class="form__form" action="#">
+                        <fieldset class="form__fieldset">
+                            <div class="form__personal-contacts-container">
+                                <legend class="form_legend-datos form_legend">Datos Personales</legend>
+                                <div class="form__container">
+                                    <label for="nombre" class="form__label">Nombre:</label>
+                                    <input class="form__input" type="text" id="nombre" name="nombre" required
+                                        placeholder="Tu nombre...">
+                                </div>
 
-        <p class="footer__text">Contacto: info@chispassj.com</p>
-        <p class="footer__text">&copy; 2025 UTN | Todos los derechos reservados</p>
-        <p class="footer__text">Cappelletti - Sanchez - Bausela</p>
-    </footer>
+                                <div class="form__container">
+                                    <label for="apellido" class="form__label">Apellido:</label>
+                                    <input class="form__input" type="text" id="apellido" name="apellido" required
+                                        placeholder="Tu apellido...">
+                                </div>
 
-    <script src="js/js.js"></script>
-    <script src="js/productos-index.js"></script>
-</body>
+                                <div class="form__container">
+                                    <label for="edad" class="form__label">Edad:</label>
+                                    <input class="form__input" type="number" id="edad" name="edad" required
+                                        placeholder="Tu edad...">
+                                </div>
+                            </div>
 
-</html>
-<!-- 
+                            <div class="form__contact-container">
+                                <legend class="form_legend form_legend-contact">Contacto</legend>
+                                <div class="form__container">
+                                    <label for="email" class="form__label">Email:</label>
+                                    <input class="form__input" type="email" id="email" name="email" required
+                                        placeholder="Tu email...">
+                                </div>
 
-iconos
+
+                                <div class="form__container">
+                                    <label for="telefono" class="form__label">Teléfono:</label>
+                                    <input class="form__input" type="tel" id="telefono" name="telefono" required
+                                        placeholder="Tu teléfono...">
+                                </div>
+
+                                <div class="form__container">
+                                    <label for="direccion" class="form__label">Dirección:</label>
+                                    <input class="form__input" type="text" id="direccion" name="direccion" required
+                                        placeholder="Tu dirección...">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="form__btns">
+                        <a href="#" class="form_btn form_btn-send">Enviar</a>
+                        <a href="#" class="form_btn form_btn-clear">Borrar</a>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <div class="footer__container">
+
+                </div>
+                <p class="footer_text footer_text-title-redes">Seguinos en nuestras redes:</p>
+
+                <div class="footer__container-links">
+                    <a href="#"><i class="footer__icon fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="footer__container-text">
+                    <p class="footer__text">Contacto: info@chispassj.com</p>
+                    <p class="footer__text">&copy; 2025 UTN | Todos los derechos reservados</p>
+                    <p class="footer__text">Cappelletti - Sanchez - Bausela</p>
+                </div>
+            </footer>
+
+            <script src="js/js.js"></script>
+            <script src="js/productos-index.js"></script>
+        </body>
+
+    </html>
