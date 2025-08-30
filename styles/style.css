@@ -397,7 +397,7 @@ textarea {
   gap: 1rem;
 }
 
-.form__btn {
+.form_btn {
   padding: 0.5rem 1rem;
   background-color: var(--color-terciario);
   font-size: 1.1rem;
@@ -406,7 +406,7 @@ textarea {
   transition: all 250ms ease;
 }
 
-.form__btn-clear {
+.form_btn-clear {
   background-color: white;
   color: var(--color-terciario);
   border: 1px solid var(--color-terciario);
