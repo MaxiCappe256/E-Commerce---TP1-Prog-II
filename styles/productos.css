@@ -284,16 +284,19 @@ textarea {
 
 .descripcion__comprar {
     padding: .5rem 1rem;
-    width: 30%;
+    width: 50%;
     cursor: pointer;
     background-color: var(--color-terciario);
     color: white;
     font-size: 1.2rem;
     border-radius: 5px;
     box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, .4);
+    transition: all 250ms ease;
 }
 
-
+.descripcion__comprar:hover {
+    transform: scale(1.1);
+}
 
 
 /* FOOTER */
