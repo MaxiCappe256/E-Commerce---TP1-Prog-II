@@ -1,0 +1,168 @@
+:root {
+    --color-primario: #ceeade;
+    --color-secundario: #4aad84;
+    --color-terciario: #22503d;
+}
+
+.form {
+    padding: 4rem 0;
+}
+
+.form__subtitle {
+    margin-bottom: 3rem;
+}
+
+.form__form {
+    padding: 1rem;
+    margin: 0 auto;
+    border: 1px solid var(--color-terciario);
+    border-radius: 10px;
+    /* height: 500px; */
+}
+
+.form__fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+}
+
+.form_legend--datos,
+.form_legend--contact {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black !important;
+    margin-bottom: 0.8rem;
+    color: var(--color-terciario);
+    position: relative;
+}
+
+.form__label {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.form__input {
+    width: 75%;
+    border: 1px solid var(--color-terciario);
+    border-radius: 10px;
+    padding: 0.3rem;
+    background-color: white;
+}
+
+.form__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form__personal-contacts-container,
+.form__contact-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.form__btns {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form_btn {
+    margin-top: 3rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-terciario);
+    font-size: 1.1rem;
+    border-radius: 5px;
+    color: white;
+    transition: all 250ms ease;
+    border: none;
+
+}
+
+.form__btn:hover {
+    transform: scale(1.1);
+}
+
+.form__container--genero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.genero__container {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.form__select {
+    font-size: 1rem;
+    padding: .2rem;
+    border-radius: 5px;
+}
+
+#text {
+    font-size: 3rem;
+}
+
+.form__container--tipo-comprador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form__input--genero {
+    font-size: 1.2rem;
+}
+
+
+.form__btn-crear-cuenta {
+    padding: 1rem;
+    font-size: 1rem;
+    text-decoration: underline;
+    color: gray;
+
+}
+
+
+
+@media (min-width: 1200px) {
+
+    .form__fieldset {
+        justify-content: center;
+        align-items: center;
+        max-width: 40%;
+        margin: 0 auto;
+        border: 1px solid var(--color-terciario);
+        padding: 1.5rem;
+        border-radius: 30px;
+    }
+
+    .form__form {
+        border: none;
+    }
+
+    .subtitle {
+        border-bottom: none;
+    }
+
+    .form__btns {
+        margin-top: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .form_btn {
+        margin: 0;
+    }
+}

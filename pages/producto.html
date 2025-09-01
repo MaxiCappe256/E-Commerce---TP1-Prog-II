@@ -13,6 +13,7 @@
         rel="stylesheet">
 
     <!-- Hoja de Estilos -->
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/productos.css">
 
     <!-- Iconos -->
@@ -23,36 +24,42 @@
 </head>
 
 <body>
-    <header class="header">
+<header class="header">
         <div class="header__envio">
             <p class="header__texto">Envío a todo el País!</p>
         </div>
 
-        <nav class="header__navbar">
-            <div class="navbar__links">
-                <a href="index.html" class="navbar__link">Inicio</a>
-                <a href="#productos" class="navbar__link">Productos</a>
-                <a href="#form" class="navbar__link">Formulario</a>
-            </div>
-
-            <div class="navbar__container-logo">
-                <img src="../assets/logo2.png" alt="imgen logo" class="container-logo__img">
-
-                <h1 class="navbar__title">ChispitaSSJ</h1>
-            </div>
+        <div class="container-navbar">
+            <nav class="header__navbar">
 
 
+                <div class="navbar__container-logo">
+                    <img src="../assets/logo2.png" alt="imgen logo" class="container-logo__img">
 
-            <div class="navbar__container-icons">
-                <i class="icons-zindex container-icons__icon fa-solid fa-magnifying-glass"></i>
-                <i class="icons-zindex container-icons__icon fa-solid fa-user"></i>
-                <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping"></i>
-                <i class="hamburguesa container-icons__icon fa-solid fa-bars"></i>
-            </div>
+                    <h1 class="navbar__title">ChispitaSSJ</h1>
+                </div>
 
-            <i class="navbar__close fa-solid fa-x"></i>
-        </nav>
+
+                <div class="navbar__links">
+                    <a href="../index.html" class="navbar__link">Inicio</a>
+                    <a href="#productos" class="navbar__link">Productos</a>
+                    <a href="login.html" class="navbar__link">Cuenta</a>
+                </div>
+
+                <div class="navbar__container-icons">
+                    <i class="icons-zindex container-icons__icon fa-solid fa-magnifying-glass"></i>
+                    <i class="icons-zindex container-icons__icon fa-solid fa-user"></i>
+                    <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping"></i>
+                    <i class="hamburguesa container-icons__icon fa-solid fa-bars"></i>
+                </div>
+
+                <i class="navbar__close fa-solid fa-x"></i>
+            </nav>
+        </div>
+
+
     </header>
+
 
     <main class="main container">
         <div class="main__container">
@@ -61,18 +68,25 @@
     </main>
 
     <footer class="footer">
-        <p class="footer__text footer__text-title-redes">Seguinos en nuestras redes:</p>
+        <div class="footer container">
+            <div class="footer__container">
+                <p class="footer__text footer_text-title-redes">Seguinos en nuestras redes:</p>
 
-        <div class="footer__container-links">
-            <a href="#"><i class="footer__icon fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="footer__icon fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="footer__icon fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="footer__icon fa-brands fa-youtube"></i></a>
+                <div class="footer__container-links">
+                    <a href="#"><i class="footer__icon fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer__container-text">
+                <p class="footer__text">&copy; 2025 UTN | Todos los derechos reservados</p>
+                <p class="footer__text">Contacto: info@chispassj.com</p>
+                <p class="footer__text">Cappelletti - Sanchez - Bausela</p>
+            </div>
         </div>
 
-        <p class="footer__text">Contacto: info@chispassj.com</p>
-        <p class="footer__text">&copy; 2025 UTN | Todos los derechos reservados</p>
-        <p class="footer__text">Cappelletti - Sanchez - Bausela</p>
     </footer>
 
     <script src="../js/js.js"></script>

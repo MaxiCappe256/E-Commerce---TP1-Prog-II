@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Hoja de Estilos -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/register.css">
+
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/b12aec4708.js" crossorigin="anonymous"></script>
+
+    <title>E-commerce</title>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__envio">
+            <p class="header__texto">Envío a todo el País!</p>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="header__navbar">
+
+
+                <div class="navbar__container-logo">
+                    <img src="../assets/logo2.png" alt="imgen logo" class="container-logo__img">
+
+                    <h1 class="navbar__title">ChispitaSSJ</h1>
+                </div>
+
+
+                <div class="navbar__links">
+                    <a href="index.html" class="navbar__link">Inicio</a>
+                    <a href="#productos" class="navbar__link">Productos</a>
+                    <a href="#form" class="navbar__link">Cuenta</a>
+                </div>
+
+                <div class="navbar__container-icons">
+                    <i class="icons-zindex container-icons__icon fa-solid fa-magnifying-glass"></i>
+                    <i class="icons-zindex container-icons__icon fa-solid fa-user"></i>
+                    <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping"></i>
+                    <i class="hamburguesa container-icons__icon fa-solid fa-bars"></i>
+                </div>
+
+                <i class="navbar__close fa-solid fa-x"></i>
+            </nav>
+        </div>
+
+
+    </header>
+
+    <main class="main">
+        <section id="form" class="form container">
+            <h2 class="form__subtitle subtitle">Registrate</h2>
+            <form class="form__form" action="#">
+                <fieldset class="form__fieldset">
+                    <div class="form__personal-contacts-container">
+                        <legend class="form_legend--datos form__legend">Datos Personales:</legend>
+                        <div class="form__container">
+                            <label for="nombre" class="form__label">Nombre:</label>
+                            <input class="form__input" type="text" id="nombre" name="nombre" required
+                                placeholder="Tu nombre...">
+                        </div>
+
+                        <div class="form__container">
+                            <label for="apellido" class="form__label">Apellido:</label>
+                            <input class="form__input" type="text" id="apellido" name="apellido" required
+                                placeholder="Tu apellido...">
+                        </div>
+
+                        <div class="form__container">
+                            <label for="edad" class="form__label">Fecha de Nacimiento:</label>
+                            <input class="form__input" type="date" id="edad" name="edad" required
+                                placeholder="Tu edad...">
+                        </div>
+
+                        <div class="form__container--genero">
+                            <label for="edad" class="form__label">Género:</label>
+                            <div class="genero__container">
+                                <input class="form__input form__input--genero" type="checkbox" id="hombre" name="hombre" required">
+                                <label class="form__input--genero" for="hombre">Hombre</label>
+                                <input class="form__input form__input--genero" type="checkbox" id="mujer" name="mujer" required">
+                                <label class="form__input--genero" for="hombre">Hombre</label>
+                            </div>
+
+                        </div>
+
+                        <div class="form__container--tipo-comprador">
+                            <label for="mayorminor" class="form__label">Tipo Comprador:</label>
+                            <select name="mayorminor" class="form__select">
+                                <option value="mayorista">Mayorista</option>
+                                <option value="minorista">Minorista</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form__contact-container">
+                        <legend class="form_legend form_legend--contact">Contacto</legend>
+                        <div class="form__container">
+                            <label for="email" class="form__label">Email:</label>
+                            <input class="form__input" type="email" id="email" name="email" required
+                                placeholder="Tu email...">
+                        </div>
+
+
+                        <div class="form__container">
+                            <label for="telefono" class="form__label">Teléfono:</label>
+                            <input class="form__input" type="tel" id="telefono" name="telefono" required
+                                placeholder="Tu teléfono...">
+                        </div>
+
+                        <div class="form__container">
+                            <label for="direccion" class="form__label">Dirección:</label>
+                            <input class="form__input" type="text" id="direccion" name="direccion" required
+                                placeholder="Tu dirección...">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form__btns">
+                    <button href="#" class="form_btn form_btn-send">Registrarse</button>
+                    <a href="#" class="form__btn-crear-cuenta">¿Ya tienes una cuenta?</a>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer container">
+            <div class="footer__container">
+                <p class="footer__text footer_text-title-redes">Seguinos en nuestras redes:</p>
+
+                <div class="footer__container-links">
+                    <a href="#"><i class="footer__icon fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="footer__icon fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer__container-text">
+                <p class="footer__text">&copy; 2025 UTN | Todos los derechos reservados</p>
+                <p class="footer__text">Contacto: info@chispassj.com</p>
+                <p class="footer__text">Cappelletti - Sanchez - Bausela</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="../js/js.js"></script>
+</body>
+
+</html>

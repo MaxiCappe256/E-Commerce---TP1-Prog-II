@@ -13,7 +13,8 @@
         rel="stylesheet">
 
     <!-- Hoja de Estilos -->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/login.css">
 
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/b12aec4708.js" crossorigin="anonymous"></script>
@@ -33,7 +34,7 @@
 
 
                 <div class="navbar__container-logo">
-                    <img src="assets/logo2.png" alt="imgen logo" class="container-logo__img">
+                    <img src="../assets/logo2.png" alt="imgen logo" class="container-logo__img">
 
                     <h1 class="navbar__title">ChispitaSSJ</h1>
                 </div>
@@ -42,7 +43,7 @@
                 <div class="navbar__links">
                     <a href="index.html" class="navbar__link">Inicio</a>
                     <a href="#productos" class="navbar__link">Productos</a>
-                    <a href="/pages/login.html" class="navbar__link">Cuenta</a>
+                    <a href="#form" class="navbar__link">Cuenta</a>
                 </div>
 
                 <div class="navbar__container-icons">
@@ -59,24 +60,24 @@
 
     </header>
 
-    <main class="main">
-        <section class="hero">
-            <div class="hero__descuento">
-                <i class="hero__icon fa-solid fa-tag"></i>
-                <p class="descuento__texto">50% OFF en tu primer compra<br>30% OFF abonando con transferencia</p>
-            </div>
-        </section>
+    <main class="main container">
+        <h2 class="main__titulo">Iniciar Sesión</h2>
+        <div class="login__container">
+            <form action="#" class="login__form">
+                <div class="login__account">
+                    <input type="text" class="login__input" name="usuario" required placeholder="Nombre de Usuario...">
+                    <input type="password" class="login__input" name="usuario" required placeholder="Contraseña...">
+                </div>
 
-        <section id="productos" class="grid container">
-            <h2 class="grid__subtitle subtitle">Productos</h2>
+                <div class="login__btns">
+                    <button class="login__btn">Iniciar Sesión</button>
 
-            <div id="contenedor_productos" class="grid__products">
-
-            </div>
-        </section>
-
-        
+                    <a href="../pages/register.html" class="login__crear-cuenta">Crear cuenta</a>
+                </div>
+            </form>
+        </div>
     </main>
+
     <footer class="footer">
         <div class="footer container">
             <div class="footer__container">
