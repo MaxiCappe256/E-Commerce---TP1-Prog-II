@@ -14,7 +14,7 @@
 
     <!-- Hoja de Estilos -->
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/productos.css">
+    <link rel="stylesheet" href="../styles/login.css">
 
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/b12aec4708.js" crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
 </head>
 
 <body>
-<header class="header">
+    <header class="header">
         <div class="header__envio">
             <p class="header__texto">Envío a todo el País!</p>
         </div>
@@ -41,9 +41,9 @@
 
 
                 <div class="navbar__links">
-                    <a href="../index.html" class="navbar__link">Inicio</a>
+                    <a href="index.html" class="navbar__link">Inicio</a>
                     <a href="#productos" class="navbar__link">Productos</a>
-                    <a href="login.html" class="navbar__link">Cuenta</a>
+                    <a href="#form" class="navbar__link">Cuenta</a>
                 </div>
 
                 <div class="navbar__container-icons">
@@ -62,10 +62,22 @@
 
     </header>
 
-
-    <main class="main container" id="producto-container-general">
-        <div class="main__container">
-
+    <main class="container">
+        <div class="div-carrito" id="carrito">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Iamgen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+            <input type="submit" value="Vaciar carrito" class="btn-vaciar-carrito" id="vaciar-carrito">
         </div>
     </main>
 
@@ -91,8 +103,8 @@
 
     </footer>
 
-    <script src="../js/js.js"></script>
-    <script src="../js/product.js"></script>
+    <script src="js/js.js"></script>
+    <script src="js/productos-index.js"></script>
 </body>
 
 </html>
