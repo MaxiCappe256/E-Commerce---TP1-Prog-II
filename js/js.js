@@ -2,10 +2,13 @@ const hamburguesa = document.querySelector(".hamburguesa");
 const menu = document.querySelector('.navbar__links');
 const links = document.querySelectorAll('.navbar__link');
 const cruz = document.querySelector('.navbar__close');
-const carrito = document.querySelector('#carrito');
-const vaciarCarritoBtn = document.querySelector('#vaciar-carrito'); 
-const agregarCarritoBtn = document.querySelector('#agregar-carrito');
-const productoContainerGeneral = document.querySelector('#producto-container-general');
+
+const carritoContenedor = document.querySelector('.carrito-container');
+const iconoCarrito = document.querySelector('#icono-carrito');
+
+iconoCarrito.addEventListener('click', () => {
+    carritoContenedor.classList.toggle('active');
+})
 
 hamburguesa.addEventListener('click', () => {
     menu.classList.toggle('active');

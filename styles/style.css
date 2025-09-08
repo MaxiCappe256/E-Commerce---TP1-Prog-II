@@ -171,6 +171,7 @@ textarea {
 	color: var(--color-terciario);
 	display: flex;
 	gap: 1rem;
+	cursor: pointer;
 }
 
 .icons-zindex {
@@ -195,6 +196,46 @@ textarea {
 .navbar__close.active {
 	opacity: 1;
 }
+
+.carrito-container {
+	display: none;
+	padding: 1rem;
+	position: absolute;
+	top: 100px;
+	left: 30px;
+	height: 30rem;
+	border: 2px solid var(--color-terciario);
+	box-shadow: 0 0 25px 15px rgba(0, 0, 0, .2);
+	width: 90%;
+	background-color: white;
+
+}
+
+
+
+.carrito-container.active {
+	display: block;
+	z-index: 9;
+}
+
+.carrito-container tr {
+	display: flex;
+	justify-content: space-between;
+
+
+}
+
+.carrito-container table {
+	width: 100%;
+}
+
+.carrito-container th {
+	font-size: 1.5rem;
+	border-bottom: 1px solid gray;
+	padding-bottom: .5rem;
+}
+
+
 
 /* MAIN */
 
@@ -381,6 +422,7 @@ textarea {
 		width: 100%;
 		padding: .4rem 0;
 		border-bottom: 2px solid var(--color-terciario);
+		position: relative;
 	}
 
 	.navbar__links.active {
@@ -434,6 +476,7 @@ textarea {
 
 	.navbar__container-icons {
 		display: none;
+
 	}
 
 	/* Hero */
@@ -461,6 +504,7 @@ textarea {
 		grid-template-columns: repeat(4, 1fr);
 		gap: 3rem;
 	}
+
 	/* FOOTER */
 
 	.footer {

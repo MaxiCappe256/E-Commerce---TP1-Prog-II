@@ -48,15 +48,33 @@
                 <div class="navbar__container-icons">
                     <i class="icons-zindex container-icons__icon fa-solid fa-magnifying-glass"></i>
                     <i class="icons-zindex container-icons__icon fa-solid fa-user"></i>
-                    <a href="../pages/carrito.html">
-                        <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping"></i>
-                    </a>
+                        <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping" id="icono-carrito"></i>
+
                     <i class="hamburguesa container-icons__icon fa-solid fa-bars"></i>
                 </div>
 
                 <i class="navbar__close fa-solid fa-x"></i>
             </nav>
+
+            <div class="carrito-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="lista-carrito">
+                        
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+
 
 
     </header>
@@ -77,7 +95,7 @@
             </div>
         </section>
 
-        
+
     </main>
     <footer class="footer">
         <div class="footer container">

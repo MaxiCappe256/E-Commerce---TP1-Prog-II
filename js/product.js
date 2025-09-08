@@ -29,7 +29,6 @@ fetch("https://sneakers-api-cmkf.onrender.com/get-sneaker/" + productId)
                 <h3 class="descripcion__titulo">${product.name}</h3>
                 <p class="descripcion__talle">${product.sizes.join(" - ")}</p>
                 <p class="descripcion__precio">$${product.price}.000</p>
-                <a href="../pages/carrito.html" class="descripcion__comprar" data-id="${product.id}" id="agregar-carrito" >Agregar Carrito</a>
             </div>
         </div>
         `;

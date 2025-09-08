@@ -13,6 +13,7 @@ fetch("https://sneakers-api-cmkf.onrender.com/")
                         <h3 class="info__titulo sub-subtitle">${products[i].name}</h3>
                         <p class="info__price">$${products[i].price}.000</p>
                         <a href="./pages/producto.html?id=${products[i].id}" target="_blank" class="info__btn">Ver más</a>
+                        <a href="./pages/producto.html?id=${products[i].id}" target="_blank" class="info__btn">Agregar al Carrito</a>
                     </div>
                 </div>
             `
