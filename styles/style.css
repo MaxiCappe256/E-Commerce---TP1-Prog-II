@@ -64,7 +64,7 @@ textarea {
 /* GLOBALES */
 
 .subtitle {
-	font-size: 3rem;
+	font-size: 3.5rem;
 	text-align: center;
 	color: var(--color-terciario);
 	/* border-bottom: 2px solid var(--color-terciario); */
@@ -377,11 +377,11 @@ tbody td {
 }
 
 .info__btn {
-	padding: 0.3rem 0.8rem;
+	padding: .8rem 1.5rem;
 	background-color: var(--color-terciario);
 	color: white;
 	border-radius: 10px;
-	font-size: 1.1rem;
+	font-size: 1.3rem;
 	transition: all 250ms ease;
 }
 
@@ -452,13 +452,25 @@ tbody td {
 }
 
 .card-oscuro {
-	background-color: rgb(114, 114, 114);
+    background-color: rgb(22, 22, 22); 
+    border: 1px solid var(--color-primario);
 }
 
-.navbar-oscuro {
-	background-color: rgb(0, 0, 0);
-	color: var(--color-primario);
+.card-oscuro .info__titulo,
+.card-oscuro .info__price {
+    color: var(--color-primario); 
 }
+
+.card-oscuro .info__btn {
+    background-color: #4aad84;
+    color: white;
+}
+
+.card-oscuro .product__container-img {
+	border-bottom: 1px solid white;
+}
+
+
 
 .links-oscuro {
 	color: var(--color-primario);
@@ -504,13 +516,16 @@ tbody td {
 /* 1200px */
 @media (min-width: 1200px) {
 
+	.subtitle {
+		font-size: 4rem;
+	}
 	/* Navbar */
 	.hamburguesa {
 		display: none;
 	}
 
 	.modo-oscuro {
-		right: 60rem;
+		right: 25rem;
 		top: 29px;
 	}
 

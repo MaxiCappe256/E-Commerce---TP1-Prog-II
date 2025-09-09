@@ -9,7 +9,7 @@ const cruz = document.querySelector('.navbar__close');
 const modoOscuroBtn = document.querySelector('.modo-oscuro');
 const body = document.querySelector('body');
 const titulos = document.querySelectorAll('h2');
-const cards = document.querySelectorAll('.container__product');
+
 
 
 
@@ -19,9 +19,11 @@ modoOscuroBtn.addEventListener('click', () => {
     titulos.forEach(titulo => {
         titulo.classList.toggle('titulo-oscuro');
     })
+    const cards = document.querySelectorAll('.container__product');
     cards.forEach(card => {
         // Cambia de add a toggle
         card.classList.toggle('card-oscuro');
+        
     })
 } )
 
