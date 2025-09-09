@@ -1,5 +1,5 @@
 :root {
-	--color-primario: #ceeade;
+	--color-primario: #bfd7cd;
 	--color-secundario: #4aad84;
 	--color-terciario: #22503d;
 }
@@ -119,6 +119,10 @@ textarea {
 	z-index: 70;
 }
 
+.modo-oscuro {
+
+}
+
 .navbar__links {
 	position: absolute;
 	top: 0;
@@ -198,20 +202,45 @@ textarea {
 }
 
 .carrito-container {
+	z-index: 999;
+	max-height: 900px;
+	overflow-y: scroll;
 	display: none;
-	padding: 1rem;
+	padding: 2rem;
 	position: absolute;
-	top: 100px;
-	left: 30px;
-	height: 30rem;
+	top: 100px ;
+	left: 30px ;
+	min-height: 10rem;
+	height: auto;
 	border: 2px solid var(--color-terciario);
 	box-shadow: 0 0 25px 15px rgba(0, 0, 0, .2);
 	width: 90%;
 	background-color: white;
+}
 
+table {
+	margin-bottom: 1rem;
+}
+
+table tr {
+	margin-bottom: 1rem;
+}
+
+tbody {
+	padding: 2rem;
 }
 
 
+
+tbody td {
+	width: 20%;
+	height: 6rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+}
 
 .carrito-container.active {
 	display: block;
@@ -221,8 +250,17 @@ textarea {
 .carrito-container tr {
 	display: flex;
 	justify-content: space-between;
+}
 
 
+.td-nombre {
+	font-size: 1rem;
+}
+
+.td-precio,
+.td-cantidad {
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .carrito-container table {
@@ -233,8 +271,22 @@ textarea {
 	font-size: 1.5rem;
 	border-bottom: 1px solid gray;
 	padding-bottom: .5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+
 }
 
+.vaciar-carrito-btn {
+	padding: .8rem 1.5rem;
+	background-color: var(--color-terciario);
+	border-radius: 10px;
+	color: white;
+	display: inline-block;
+	margin: 0 auto;
+}
 
 
 /* MAIN */
@@ -303,6 +355,7 @@ textarea {
 	cursor: pointer;
 	transition: all 250ms ease;
 }
+
 
 .container__product:hover {
 	transform: scale(1.03);
@@ -384,6 +437,45 @@ textarea {
 	margin: 0.3rem 0;
 }
 
+/* Modo oscuro */
+
+.modo-oscuro {
+	cursor: pointer;
+}
+
+.modo-oscuro-general {	
+	background-color: rgb(0, 0, 0);
+}
+
+.titulo-oscuro {
+	color: var(--color-primario);
+}
+
+.card-oscuro {
+	background-color: rgb(114, 114, 114);
+}
+
+.navbar-oscuro {
+	background-color: rgb(0, 0, 0);
+	color: var(--color-primario);
+}
+
+.links-oscuro {
+	color: var(--color-primario);
+}
+
+.container-logo-oscuro {
+	color: var(--color-primario);
+}
+
+.modo-oscuro {
+	position: absolute;
+	top: 22px;
+	right: 165px;
+	color: var(--color-terciario);
+}
+
+
 /* 480px */
 
 @media (min-width: 480px) {
@@ -415,6 +507,11 @@ textarea {
 	/* Navbar */
 	.hamburguesa {
 		display: none;
+	}
+
+	.modo-oscuro {
+		right: 60rem;
+		top: 29px;
 	}
 
 	.container-navbar {
@@ -478,6 +575,15 @@ textarea {
 		display: none;
 
 	}
+
+	/* Carrito */
+	.carrito-container {
+		top: 100px;
+		left: 1091px;
+		max-width: 800px;
+	}
+
+
 
 	/* Hero */
 

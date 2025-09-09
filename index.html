@@ -18,6 +18,9 @@
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/b12aec4708.js" crossorigin="anonymous"></script>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+
     <title>E-commerce</title>
 
 </head>
@@ -43,20 +46,22 @@
                     <a href="index.html" class="navbar__link">Inicio</a>
                     <a href="#productos" class="navbar__link">Productos</a>
                     <a href="/pages/login.html" class="navbar__link">Cuenta</a>
-                </div>
+                    <a href="#" class="navbar__link" id="link-carrito">Carrito</a>
+                </div>  
+
+                <i class="container-icons__icon modo-oscuro fa-solid fa-moon"></i>
 
                 <div class="navbar__container-icons">
                     <i class="icons-zindex container-icons__icon fa-solid fa-magnifying-glass"></i>
                     <i class="icons-zindex container-icons__icon fa-solid fa-user"></i>
-                        <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping" id="icono-carrito"></i>
-
+                    <i class="icons-zindex container-icons__icon fa-solid fa-cart-shopping" id="icono-carrito"></i>
                     <i class="hamburguesa container-icons__icon fa-solid fa-bars"></i>
                 </div>
 
                 <i class="navbar__close fa-solid fa-x"></i>
             </nav>
 
-            <div class="carrito-container">
+            <div class="carrito-container ">
                 <table>
                     <thead>
                         <tr>
@@ -67,10 +72,12 @@
                         </tr>
                     </thead>
 
-                    <tbody id="lista-carrito">
-                        
+                    <tbody class="cuerpo-carrito" id="lista-carrito">
+
                     </tbody>
                 </table>
+
+                <a href="#" class="vaciar-carrito-btn">Vaciar Carrito</a>
             </div>
         </div>
 
