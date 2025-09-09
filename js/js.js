@@ -29,24 +29,22 @@ modoOscuroBtn.addEventListener('click', () => {
 
 hamburguesa.addEventListener('click', () => {
     menu.classList.toggle('active');
-    cruz.classList.toggle('active');
-})
-
-
-links.forEach(link => {
-    link.addEventListener('click', () => {
-        menu.classList.remove('active');
-        cruz.classList.remove('active');
-
-    })
+    cruz.classList.add('active');
 })
 
 document.addEventListener('click', (e) => {
     if(!menu.contains(e.target) && !hamburguesa.contains(e.target)) {
         menu.classList.remove('active');
-        cruz.classList.remove('active');
     }
-});
+})
+
+cruz.addEventListener('click', () => {
+    menu.classList.remove('active');
+})
+
+
+
+
 
 // Carrito 
 
@@ -54,7 +52,8 @@ const carritoContenedor = document.querySelector('.carrito-container');
 const iconoCarrito = document.querySelector('#icono-carrito');
 const listaCarrito = document.querySelector('#lista-carrito');
 const vaciarCarritoBtn = document.querySelector('.vaciar-carrito-btn');
-const linkCarrito = document.querySelector('#link-carrito');
+const linkCarrito = document.getElementById('link-carrito');
+const btnAgregar = document.querySelector('.btn-agregar');
 
 let articulosCarrito = [];
 
@@ -70,6 +69,12 @@ iconoCarrito.addEventListener('click', (e) => {
     e.preventDefault();
     carritoContenedor.classList.toggle('active')
 })
+
+document.addEventListener('click', (e) => {
+    if(!listaCarrito.contains(e.target) && !iconoCarrito.contains(e.target)) {
+        carritoContenedor.classList.remove('active');
+    }
+});
 
 vaciarCarritoBtn.addEventListener('click', (e) => {
     e.preventDefault();
