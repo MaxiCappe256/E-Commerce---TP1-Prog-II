@@ -1,13 +1,15 @@
 :root {
-	--color-primario: #ceeade;
-	--color-secundario: #4aad84;
-	--color-terciario: #22503d;
+    --color-primario: #ceeade;
+    --color-secundario: #4aad84;
+    --color-terciario: #22503d;
 }
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .header {
@@ -31,6 +33,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.login__container {
+    width: 95%;
+}
+
 
 .login__form {
     display: flex;
@@ -51,7 +57,7 @@ body {
     flex-direction: column;
 }
 
-.login__input{
+.login__input {
     border: 1px solid var(--color-terciario) !important;
     padding: .7rem;
     border-radius: 10px;
@@ -102,6 +108,10 @@ body {
 
     .login__form {
         justify-content: space-between;
+    }
+
+    .login__container {
+        max-width: 400px;
     }
 
 }

@@ -4,6 +4,9 @@
     --color-terciario: #22503d;
 }
 
+body {
+    overflow-x: hidden;
+}
 
 .header {
     position: relative;

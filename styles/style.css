@@ -546,8 +546,10 @@ table tbody tr td {
 	}
 
 	.modo-oscuro {
-		right: 25rem;
-		top: 29px;
+		position: absolute;
+		right: 470px;
+		top: 20px;
+		z-index: 999;
 	}
 
 	.container-navbar {
@@ -566,7 +568,7 @@ table tbody tr td {
 	.header__navbar {
 		max-width: 1400px;
 		margin: 0 auto;
-		position: static;
+		position: relative;
 		display: flex;
 		border: none;
 		justify-content: space-between;
