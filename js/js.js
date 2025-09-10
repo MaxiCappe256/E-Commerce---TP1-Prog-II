@@ -53,7 +53,7 @@ const iconoCarrito = document.querySelector('#icono-carrito');
 const listaCarrito = document.querySelector('#lista-carrito');
 const vaciarCarritoBtn = document.querySelector('.vaciar-carrito-btn');
 const linkCarrito = document.getElementById('link-carrito');
-const btnAgregar = document.querySelector('.btn-agregar');
+const btnAgregar = document.querySelectorAll('.btn-agregar');
 
 let articulosCarrito = [];
 
@@ -62,6 +62,7 @@ let articulosCarrito = [];
 linkCarrito.addEventListener('click', (e) => {
     e.preventDefault();
     carritoContenedor.classList.toggle('active')
+    console.log("clickeando");
 })
 
 
@@ -71,7 +72,7 @@ iconoCarrito.addEventListener('click', (e) => {
 })
 
 document.addEventListener('click', (e) => {
-    if(!listaCarrito.contains(e.target) && !iconoCarrito.contains(e.target)) {
+    if(!listaCarrito.contains(e.target) && !iconoCarrito.contains(e.target) && !btnAgregar.contains(e.target)) {
         carritoContenedor.classList.remove('active');
     }
 });
@@ -114,9 +115,9 @@ function imprimirCarrito() {
 
         const fila = document.createElement('tr');
         fila.innerHTML = `
-        <td><img src="${image[0]}" width="100px" height="auto"></td> 
+        <td class="td-imagen"><img src="${image[0]}" width="100px" height="auto"></td> 
         <td class="td-nombre">${name}</td>
-        <td class="td-precio">${price}</td>
+        <td class="td-precio">$${price}</td>
         <td class="td-cantidad">${cantidad}</td>
         `;
         listaCarrito.appendChild(fila);
