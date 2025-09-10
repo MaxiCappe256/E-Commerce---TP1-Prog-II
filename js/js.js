@@ -9,8 +9,22 @@ const cruz = document.querySelector('.navbar__close');
 const modoOscuroBtn = document.querySelector('.modo-oscuro');
 const body = document.querySelector('body');
 const titulos = document.querySelectorAll('h2');
+const parrafos = document.querySelectorAll('p');
 
+hamburguesa.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    cruz.classList.add('active');
+})
 
+document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !hamburguesa.contains(e.target)) {
+        menu.classList.remove('active');
+    }
+})
+
+cruz.addEventListener('click', () => {
+    menu.classList.remove('active');
+})
 
 
 // Modo Oscuro
@@ -23,26 +37,12 @@ modoOscuroBtn.addEventListener('click', () => {
     cards.forEach(card => {
         // Cambia de add a toggle
         card.classList.toggle('card-oscuro');
-        
+
     })
-} )
-
-hamburguesa.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    cruz.classList.add('active');
+    parrafos.forEach(parrafo => {
+        parrafo.classList.toggle('parrafos-oscuros');
+    })
 })
-
-document.addEventListener('click', (e) => {
-    if(!menu.contains(e.target) && !hamburguesa.contains(e.target)) {
-        menu.classList.remove('active');
-    }
-})
-
-cruz.addEventListener('click', () => {
-    menu.classList.remove('active');
-})
-
-
 
 
 
@@ -52,18 +52,42 @@ const carritoContenedor = document.querySelector('.carrito-container');
 const iconoCarrito = document.querySelector('#icono-carrito');
 const listaCarrito = document.querySelector('#lista-carrito');
 const vaciarCarritoBtn = document.querySelector('.vaciar-carrito-btn');
-const linkCarrito = document.getElementById('link-carrito');
 const btnAgregar = document.querySelectorAll('.btn-agregar');
 
 let articulosCarrito = [];
 
+// Guardar en localStorage
+function guardarCarritoLocalStorage() {
+    localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
+    console.log("Carrito guardado en localStorage:", articulosCarrito);
+}
 
-// Mostrar el carrito
-linkCarrito.addEventListener('click', (e) => {
-    e.preventDefault();
-    carritoContenedor.classList.toggle('active')
-    console.log("clickeando");
-})
+function obtenerCarritoLocalStorage() {
+    const carritoGuardado = localStorage.getItem("carrito");
+    if (carritoGuardado) {
+        try {
+            articulosCarrito = JSON.parse(carritoGuardado);
+            // Validar que si se haya convertido en un array
+            if (!Array.isArray(articulosCarrito)) {
+                console.error("El dato recuperado de localStorage no es un array. Reiniciando carrito.");
+                articulosCarrito = [];
+            }
+            imprimirCarrito();
+            console.log("Carrito recuperado de localStorage:", articulosCarrito);
+        } catch (error) {
+            console.error("Error al parsear el carrito desde localStorage:", error);
+            articulosCarrito = [];
+            limpiarHTML();
+        }
+    } else {
+        console.log("No había carrito en localStorage");
+    }
+}
+
+// Al recargar la pagina se recupera lo que habia
+document.addEventListener("DOMContentLoaded", () => {
+    obtenerCarritoLocalStorage();
+});
 
 
 iconoCarrito.addEventListener('click', (e) => {
@@ -72,7 +96,7 @@ iconoCarrito.addEventListener('click', (e) => {
 })
 
 document.addEventListener('click', (e) => {
-    if(!listaCarrito.contains(e.target) && !iconoCarrito.contains(e.target) && !btnAgregar.contains(e.target)) {
+    if (!listaCarrito.contains(e.target) && !iconoCarrito.contains(e.target)) {
         carritoContenedor.classList.remove('active');
     }
 });
@@ -81,9 +105,11 @@ vaciarCarritoBtn.addEventListener('click', (e) => {
     e.preventDefault();
     articulosCarrito = [];
     limpiarHTML();
+    guardarCarritoLocalStorage();
 })
 
 function limpiarHTML() {
+    if (!listaCarrito) return;
     while (listaCarrito.firstChild) {
         listaCarrito.removeChild(listaCarrito.firstChild);
     }
@@ -92,26 +118,27 @@ function limpiarHTML() {
 function agregarAlCarrito(producto) {
     const existe = articulosCarrito.some(p => p.id === producto.id)
 
-    if(existe) {
+    if (existe) {
         articulosCarrito = articulosCarrito.map(p => {
-            if(p.id === producto.id) {
-                p.cantidad ++;
+            if (p.id === producto.id) {
+                p.cantidad++;
             }
             return p;
         })
     } else {
-        const informacionProducto = {...producto, cantidad: 1};
+        const informacionProducto = { ...producto, cantidad: 1 };
         articulosCarrito = [...articulosCarrito, informacionProducto];
     }
 
     imprimirCarrito();
+    guardarCarritoLocalStorage();
 }
 
 function imprimirCarrito() {
     limpiarHTML();
 
     articulosCarrito.forEach(producto => {
-        const {image, name, price, cantidad, id} = producto;
+        const { image, name, price, cantidad, id } = producto;
 
         const fila = document.createElement('tr');
         fila.innerHTML = `

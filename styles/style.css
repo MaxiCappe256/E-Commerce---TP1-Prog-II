@@ -105,7 +105,7 @@ textarea {
 }
 
 .header__navbar {
-	position: absolute;
+	position: relative;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -178,6 +178,12 @@ textarea {
 
 .icons-zindex {
 	z-index: 60;
+}
+
+.iconos-fijos {
+	color: var(--color-terciario);
+	position: absolute;
+	left: 200px;
 }
 
 .container-icons__icon {
@@ -458,9 +464,6 @@ table tbody tr td {
 
 /* Modo oscuro */
 
-.modo-oscuro {
-	cursor: pointer;
-}
 
 .modo-oscuro-general {
 	background-color: rgb(0, 0, 0);
@@ -489,8 +492,6 @@ table tbody tr td {
 	border-bottom: 1px solid white;
 }
 
-
-
 .links-oscuro {
 	color: var(--color-primario);
 }
@@ -499,13 +500,10 @@ table tbody tr td {
 	color: var(--color-primario);
 }
 
-.modo-oscuro {
-	position: absolute;
-	top: 22px;
-	right: 165px;
-	color: var(--color-terciario);
-}
 
+.parrafos-oscuros {
+	color: var(--color-primario);
+}
 
 /* 480px */
 
@@ -535,6 +533,12 @@ table tbody tr td {
 /* 1200px */
 @media (min-width: 1200px) {
 
+	.iconos-fijos {
+		left: 800px;
+		display: flex;
+		gap: 2rem;
+		cursor: pointer;
+	}
 
 	.subtitle {
 		font-size: 4rem;
@@ -545,12 +549,6 @@ table tbody tr td {
 		display: none;
 	}
 
-	.modo-oscuro {
-		position: absolute;
-		right: 470px;
-		top: 20px;
-		z-index: 999;
-	}
 
 	.container-navbar {
 		background-color: white;
@@ -621,6 +619,7 @@ table tbody tr td {
 		max-width: 800px;
 		max-height: 800px;
 	}
+
 
 	table thead tr th {
 		font-size: 1.5rem;

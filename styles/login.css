@@ -79,6 +79,11 @@ body {
     text-decoration: none;
     border-radius: 10px;
     font-size: 1.2rem;
+    transition: all 250ms ease;
+}
+
+.login__btn:hover {
+    transform: scale(1.1);
 }
 
 .login__crear-cuenta {

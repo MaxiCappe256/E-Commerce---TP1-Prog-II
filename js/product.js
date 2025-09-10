@@ -5,9 +5,14 @@ const productId = parseInt(params.get('id'));
 fetch("https://sneakers-api-cmkf.onrender.com/get-sneaker/" + productId)
     .then(response => response.json())
     .then(product => {
-        console.log(product);
-        producto.innerHTML = `
 
+        if (!product || !product.image) {
+            console.error("El producto no existe o no tiene imágenes:", product);
+            producto.innerHTML = `<p>Producto no encontrado.</p>`;
+            return;
+        }
+
+        producto.innerHTML = `
         <div class="container-product">
             <div class="container-img">
 
@@ -19,7 +24,7 @@ fetch("https://sneakers-api-cmkf.onrender.com/get-sneaker/" + productId)
 
                 <div class="container-img__secundarias">
                     ${product.image.slice(1).map((img, i) =>
-                `<a href="${img}">
+                        `<a href="${img}">
                             <img class="container-img__imagen-secundaria" src="${img}" alt="imagen zapatilla">
                         </a>`).join("")}
                 </div>
@@ -32,5 +37,8 @@ fetch("https://sneakers-api-cmkf.onrender.com/get-sneaker/" + productId)
             </div>
         </div>
         `;
-        }
-    )
+    })
+    .catch(err => {
+        console.error("Error al obtener el producto:", err);
+        producto.innerHTML = `<p>Error al cargar el producto.</p>`;
+    });
