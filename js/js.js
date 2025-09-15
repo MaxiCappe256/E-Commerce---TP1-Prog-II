@@ -5,11 +5,15 @@ const menu = document.querySelector('.navbar__links');
 const links = document.querySelectorAll('.navbar__link');
 const cruz = document.querySelector('.navbar__close');
 
-
+let modoOscuroGuardado = localStorage.getItem('modoOscuro');
 const modoOscuroBtn = document.querySelector('.modo-oscuro');
 const body = document.querySelector('body');
 const titulos = document.querySelectorAll('h2');
 const parrafos = document.querySelectorAll('p');
+const labels = document.querySelectorAll('label');
+const inputs = document.querySelectorAll('input');
+const legends = document.querySelectorAll('legend');
+const select = document.querySelector('select');
 
 hamburguesa.addEventListener('click', () => {
     menu.classList.toggle('active');
@@ -37,11 +41,21 @@ modoOscuroBtn.addEventListener('click', () => {
     cards.forEach(card => {
         // Cambia de add a toggle
         card.classList.toggle('card-oscuro');
-
     })
     parrafos.forEach(parrafo => {
         parrafo.classList.toggle('parrafos-oscuros');
     })
+    labels.forEach(label => {
+        label.classList.toggle('label-oscuro');
+    })
+    inputs.forEach(input => {
+        input.classList.toggle('input-oscuro');
+    })  
+    legends.forEach(legend => {
+        legend.classList.toggle('legend-oscuro');
+    })
+    select.classList.toggle('select-oscuro');
+
 })
 
 
@@ -150,3 +164,4 @@ function imprimirCarrito() {
         listaCarrito.appendChild(fila);
     })
 }
+

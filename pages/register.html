@@ -75,7 +75,9 @@
     </header>
 
     <main class="main">
+        <span id="exito" style="display: none;">Registro Exitoso</span>
         <section id="form" class="form container">
+
             <h2 class="form__subtitle subtitle">Registrate</h2>
             <form class="form__form" action="#">
                 <fieldset class="form__fieldset">
@@ -83,42 +85,45 @@
                         <legend class="form_legend--datos form__legend">Datos Personales:</legend>
                         <div class="form__container">
                             <label for="nombre" class="form__label">Nombre:</label>
-                            <input class="form__input" type="text" id="nombre" name="nombre" required
-                                placeholder="Tu nombre...">
+                            <input class="form__input" type="text" id="nombre" name="nombre" placeholder="Tu nombre...">
+                            <span class="error"></span>
                         </div>
 
                         <div class="form__container">
                             <label for="apellido" class="form__label">Apellido:</label>
-                            <input class="form__input" type="text" id="apellido" name="apellido" required
+                            <input class="form__input" type="text" id="apellido" name="apellido"
                                 placeholder="Tu apellido...">
+                            <span class="error"></span>
                         </div>
 
                         <div class="form__container">
                             <label for="edad" class="form__label">Fecha de Nacimiento:</label>
-                            <input class="form__input" type="date" id="edad" name="edad" required
-                                placeholder="Tu edad...">
+                            <input class="form__input" type="date" id="edad" name="edad">
+                            <span class="error"></span>
                         </div>
 
                         <div class="form__container--genero">
                             <label for="edad" class="form__label">Género:</label>
                             <div class="genero__container">
-                                <input class="form__input form__input--genero" type="checkbox" id="hombre" name="hombre"
-                                    required">
+                                <input class="form__input form__input--genero" type="radio" id="hombre"
+                                    name="hombre">
                                 <label class="form__input--genero" for="hombre">Hombre</label>
-                                <input class="form__input form__input--genero" type="checkbox" id="mujer" name="mujer"
-                                    required">
-                                <label class="form__input--genero" for="hombre">Hombre</label>
-                            </div>
+                                <input class="form__input form__input--genero" type="radio" id="mujer" name="mujer">
+                                <label class="form__input--genero" for="mujer">Mujer</label>
 
+                                <span class="error"></span>
+                            </div>
                         </div>
 
                         <div class="form__container--tipo-comprador">
                             <label for="mayorminor" class="form__label">Tipo Comprador:</label>
-                            <select name="mayorminor" class="form__select">
+                            <select id="tipo-comprador" name="mayorminor" class="form__select">
+                                <option value="" disabled selected>--Seleccionar--</option>
                                 <option value="mayorista">Mayorista</option>
                                 <option value="minorista">Minorista</option>
                             </select>
 
+                            <span class="error"></span>
                         </div>
                     </div>
 
@@ -126,21 +131,23 @@
                         <legend class="form_legend form_legend--contact">Contacto</legend>
                         <div class="form__container">
                             <label for="email" class="form__label">Email:</label>
-                            <input class="form__input" type="email" id="email" name="email" required
-                                placeholder="Tu email...">
+                            <input class="form__input" type="email" id="email" name="email" placeholder="Tu email...">
+                            <span class="error"></span>
                         </div>
 
 
                         <div class="form__container">
                             <label for="telefono" class="form__label">Teléfono:</label>
-                            <input class="form__input" type="tel" id="telefono" name="telefono" required
+                            <input class="form__input" type="tel" id="telefono" name="telefono"
                                 placeholder="Tu teléfono...">
+                            <span class="error"></span>
                         </div>
 
                         <div class="form__container">
                             <label for="direccion" class="form__label">Dirección:</label>
-                            <input class="form__input" type="text" id="direccion" name="direccion" required
+                            <input class="form__input" type="text" id="direccion" name="direccion"
                                 placeholder="Tu dirección...">
+                            <span class="error"></span>
                         </div>
                     </div>
                 </fieldset>
@@ -176,7 +183,8 @@
 
     </footer>
 
-    <script src="../js/js.js"></script>
+    <!-- <script src="../js/js.js"></script> -->
+    <script src="../js/validar-form.js"></script>
 </body>
 
 </html>

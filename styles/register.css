@@ -151,6 +151,28 @@ body {
 }
 
 
+.label-oscuro {
+	color: var(--color-primario);
+}
+
+.legend-oscuro {
+	color: var(--color-primario);
+}
+
+.input-oscuro {
+	background-color: black;
+	color: var(--color-primario);
+}
+
+.select-oscuro {
+    background-color: black;
+    color: var(--color-primario);
+}
+
+.error {
+    font-size: 1.5rem;
+    color: red;
+}
 
 @media (min-width: 1200px) {
 

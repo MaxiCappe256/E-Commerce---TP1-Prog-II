@@ -315,6 +315,12 @@ table tbody tr td {
 
 /* HERO */
 
+.hero {
+  position: relative;
+  width: 100%;
+	padding-top: 6rem;
+}
+
 .hero__descuento {
 	color: white;
 	display: flex;
@@ -344,8 +350,7 @@ table tbody tr td {
 	height: 4.5rem;
 	width: 2px;
 	background-color: white;
-	top: -10px;
-	left: -50px;
+	left: -20px;
 }
 
 .hero__icon {
@@ -502,6 +507,19 @@ table tbody tr td {
 
 
 .parrafos-oscuros {
+	color: var(--color-primario);
+}
+
+.label-oscuro {
+	color: var(--color-primario);
+}
+
+.legend-oscuro {
+	color: var(--color-primario);
+}
+
+.input-oscuro {
+	background-color: black;
 	color: var(--color-primario);
 }
 
