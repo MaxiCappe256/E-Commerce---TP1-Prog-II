@@ -9,7 +9,7 @@ body {
 }
 
 .main {
-    padding: 6rem 0;
+    padding: 8rem 0;
 }
 
 .main__container {
@@ -105,6 +105,10 @@ body {
     .container-img__imagen0 {
         max-width: 500px;
         margin: 0 auto;
+    }
+
+    .main {
+        padding: 10rem 0;
     }
 
     .main__container {

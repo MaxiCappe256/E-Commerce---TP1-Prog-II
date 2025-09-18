@@ -4,114 +4,166 @@ const checkMujer = document.getElementById('mujer');
 const checkHombre = document.getElementById('hombre');
 const tipoComprador = document.getElementById('tipo-comprador');
 const exito = document.getElementById('exito');
-let usuarioGuardado = JSON.parse(localStorage.getItem('usuarios')) || [];
-let valido = true;
+const mensaje = document.getElementById('mensaje');
+const formulario = document.getElementById('formulario');
+let usuariosGuardados = JSON.parse(localStorage.getItem('usuarios')) || [];
+
 
 inputs.forEach(input => {
   input.addEventListener('blur', () => {
-
-
     if (input.id === "nombre") {
-      if (input.value === "") {
-        input.nextElementSibling.textContent = "El nombre es obligatorio";
-        valido = false;
-      } else if (input.value.length < 3) {
-        input.nextElementSibling.textContent = "El nombre debe tener al menos 3 caracteres";
-        valido = false;
+      if (input.value.trim().length < 3) {
+        mensaje.textContent = "El nombre debe contener al menos 3 caracteres"
+        mensaje.classList.add('error');
       } else {
-        input.nextElementSibling.textContent = "";
-        valido = true;
+        mensaje.textContent = "";
+        mensaje.classList.remove('error');
       }
     }
 
     if (input.id === "apellido") {
-      if (input.value === "") {
-        input.nextElementSibling.textContent = "El apellido es obligatorio";
-        valido = false;
-      } else if (input.value.length < 3) {
-        input.nextElementSibling.textContent = "El apellido debe tener al menos 3 caracteres";
-        valido = false;
+      if (input.value.trim().length < 3) {
+        mensaje.textContent = "El apellido debe contener al menos 3 caracteres"
+        mensaje.classList.add('error');
       } else {
-        input.nextElementSibling.textContent = "";
-        valido = true;
+        mensaje.textContent = "";
+        mensaje.classList.remove('error');
+      }
+    }
+
+    if (input.id === "apellido") {
+      if (input.value.trim().length < 3) {
+        mensaje.textContent = "El apellido debe contener al menos 3 caracteres"
+        mensaje.classList.add('error');
+      } else {
+        mensaje.textContent = "";
+        mensaje.classList.remove('error');
       }
     }
 
     if (input.id === "email") {
-      if (input.value === "") {
-        input.nextElementSibling.textContent = "El email es obligatorio";
-        valido = false;
-      } else if (!input.value.includes("@") || !input.value.includes(".")) {
-        input.nextElementSibling.textContent = "El email es incorrecto";
-        valido = false;
+      if (!input.value.includes("@") || !input.value.includes(".")) {
+        mensaje.textContent = "Formato de email inválido";
+        mensaje.classList.add('error');
       } else {
-        input.nextElementSibling.textContent = "";
-        valido = true;
+        mensaje.textContent = "";
+        mensaje.classList.remove('error');
       }
     }
 
-    if (input.id === "telefono") {
-      if (input.value === "") {
-        input.nextElementSibling.textContent = "El telefono es obligatorio";
-        valido = false;
-      } else if (input.value.length < 7) {
-        input.nextElementSibling.textContent = "El telefono debe tener al menos 7 caracteres";
-        valido = false;
+    if (input.id === "edad") {
+      if (!input.value) {
+        mensaje.textContent = "Debes ingresar tu fecha de nacimiento";
+        mensaje.classList.add('error');
       } else {
-        input.nextElementSibling.textContent = "";
-        valido = true;
+        mensaje.textContent = "";
+        mensaje.classList.remove('error');
       }
     }
-
-    if (input.id === "direccion") {
-      if (input.value === "") {
-        input.nextElementSibling.textContent = "El direccion es obligatoria";
-        valido = false;
-      } else if (input.value.length < 7) {
-        input.nextElementSibling.textContent = "La direccion debe tener al menos 7 caracteres";
-        valido = false;
-      }
-      else {
-        input.nextElementSibling.textContent = "";
-        valido = true;
-      }
-    }
-
-    if (!checkHombre.checked && !checkMujer.checked) {
-      document.querySelector('.genero__container .error').textContent = "Debe seleccionar al menos una opción";
-      valido = false;
-    } else {
-      document.querySelector('.genero__container .error').textContent = "";
-      valido = true;
-    }
-
-
   })
+
+  if (input.type === "radio" && input.name === "genero") {
+    input.addEventListener('change', () => {
+      const seleccionado = document.querySelector('input[name="genero"]:checked');
+      if (!seleccionado) {
+        mensaje.textContent = "Debes seleccionar un género";
+        mensaje.classList.add('error');
+      } else {
+        mensaje.textContent = "";
+        mensaje.classList.remove('error');
+      }
+    });
+  }
+
 })
 
-if (tipoComprador.value === "") {
-  tipoComprador.nextElementSibling.textContent = "Debe seleccionar al menos una opción";
-  valido = false;
-} else {
-  tipoComprador.nextElementSibling.textContent = "";
-  valido = true
-}
-
-console.log(tipoComprador.value)
-
-if (valido) {
-  exito.style.display = "block";
-
-  const usuario = {
-    nombre: document.getElementById('nombre').value,
-    apellido: document.getElementById('apellido').value,
-    fechaNacimiento: document.getElementById('edad').value,
-    // genero: document.getElementById('nombre').value,
-    tipoComprador: document.getElementById('tipo-comprador').value,
-    email: document.getElementById('email').value,
-    telefono: document.getElementById('telefono').value,
-    direccion: document.getElementById('direccion').value
+tipoComprador.addEventListener('change', () => {
+  if (tipoComprador.value === "") {
+    mensaje.textContent = "Debes seleccionar un tipo de comprador";
+    mensaje.classList.add('error');
+  } else {
+    mensaje.textContent = "";
+    mensaje.classList.remove('error');
   }
-  console.log(usuario)
-}
+})
+
+formulario.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let valido = true;
+
+  inputs.forEach(input => {
+    if (input.id === "nombre") {
+      if (input.value.trim().length < 3) {
+        mensaje.textContent = "El nombre debe contener al menos 3 caracteres";
+        mensaje.classList.add("error");
+        valido = false;
+      }
+    }
+
+    if (input.id === "apellido") {
+      if (input.value.trim().length < 3) {
+        mensaje.textContent = "El apellido debe contener al menos 3 caracteres";
+        mensaje.classList.add("error");
+        valido = false;
+      }
+    }
+
+    if (input.id === "email") {
+      const valorEmail = input.value.trim();
+      if (!valorEmail.includes("@") || !valorEmail.includes(".")) {
+        mensaje.textContent = "Formato de email inválido";
+        mensaje.classList.add("error");
+        valido = false;
+      }
+    }
+
+    if (input.id === "edad") {
+      if (!input.value) {
+        mensaje.textContent = "Debes ingresar tu fecha de nacimiento";
+        mensaje.classList.add("error");
+        valido = false;
+      }
+    }
+  })
+
+  const generoSeleccionado = document.querySelector('input[name="genero"]:checked');
+  if (!generoSeleccionado) {
+    mensaje.textContent = "Debes seleccionar un género";
+    mensaje.classList.add("error");
+    valido = false;
+  }
+
+  if (tipoComprador.value === "") {
+    mensaje.textContent = "Debes seleccionar un tipo de comprador";
+    mensaje.classList.add("error");
+    valido = false;
+  }
+
+  if (valido) {
+
+    const usuario = {
+      nombre: document.getElementById('nombre').value,
+      apellido: document.getElementById('apellido').value,
+      email: document.getElementById('email').value,
+      edad: document.getElementById('edad').value,
+      genero: document.querySelector('input[name="genero"]:checked').value,
+      tipoComprador: document.getElementById("tipo-comprador").value
+    }
+
+    usuariosGuardados.push(usuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuariosGuardados));
+
+    formulario.reset();
+
+    mensaje.classList.remove("error");
+    mensaje.classList.add("exito");
+    mensaje.textContent = "Formulario válido, guardando usuario...";
+
+    console.log(valido)
+  } else {
+    mensaje.textContent = "Datos incompletos/incorrectos";
+    mensaje.classList.add("error");
+  }
+})
 

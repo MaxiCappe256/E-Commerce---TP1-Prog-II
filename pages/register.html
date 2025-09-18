@@ -75,88 +75,112 @@
     </header>
 
     <main class="main">
-        <span id="exito" style="display: none;">Registro Exitoso</span>
         <section id="form" class="form container">
-
+            <div id="mensaje" class="alerta"></div>
             <h2 class="form__subtitle subtitle">Registrate</h2>
-            <form class="form__form" action="#">
+            <form id="formulario" class="form__form">
                 <fieldset class="form__fieldset">
                     <div class="form__personal-contacts-container">
                         <legend class="form_legend--datos form__legend">Datos Personales:</legend>
                         <div class="form__container">
-                            <label for="nombre" class="form__label">Nombre:</label>
-                            <input class="form__input" type="text" id="nombre" name="nombre" placeholder="Tu nombre...">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="form__container">
-                            <label for="apellido" class="form__label">Apellido:</label>
-                            <input class="form__input" type="text" id="apellido" name="apellido"
-                                placeholder="Tu apellido...">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="form__container">
-                            <label for="edad" class="form__label">Fecha de Nacimiento:</label>
-                            <input class="form__input" type="date" id="edad" name="edad">
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="form__container--genero">
-                            <label for="edad" class="form__label">Género:</label>
-                            <div class="genero__container">
-                                <input class="form__input form__input--genero" type="radio" id="hombre"
-                                    name="hombre">
-                                <label class="form__input--genero" for="hombre">Hombre</label>
-                                <input class="form__input form__input--genero" type="radio" id="mujer" name="mujer">
-                                <label class="form__input--genero" for="mujer">Mujer</label>
-
-                                <span class="error"></span>
+                            <div class="form__container-top">
+                                <label for="nombre" class="form__label">Nombre:</label>
+                                <input class="form__input" type="text" id="nombre" name="nombre"
+                                    placeholder="Tu nombre...">
                             </div>
                         </div>
 
-                        <div class="form__container--tipo-comprador">
-                            <label for="mayorminor" class="form__label">Tipo Comprador:</label>
-                            <select id="tipo-comprador" name="mayorminor" class="form__select">
-                                <option value="" disabled selected>--Seleccionar--</option>
-                                <option value="mayorista">Mayorista</option>
-                                <option value="minorista">Minorista</option>
-                            </select>
 
-                            <span class="error"></span>
+
+                        <div class="form__container">
+                            <div class="form__container-top">
+                                <label for="apellido" class="form__label">Apellido:</label>
+                                <input class="form__input" type="text" id="apellido" name="apellido"
+                                    placeholder="Tu apellido...">
+                            </div>
                         </div>
+
+                        <div class="form__container">
+                            <div class="form__container-top">
+                                <label for="edad" class="form__label">Fecha de Nacimiento:</label>
+                                <input class="form__input" type="date" id="edad" name="edad">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form__container--genero">
+                            <label for="edad" class="form__label">Género:</label>
+                            <div class="mujeryhombre">
+                                <div class="hombre">
+                                    <input class="form__input form__input--genero" type="radio" id="hombre"
+                                        name="genero">
+                                    <label class="form__input--genero" for="hombre">Hombre</label>
+                                </div>
+                                <div class="mujer">
+                                    <input class="form__input form__input--genero" type="radio" id="mujer"
+                                        name="genero">
+                                    <label class="form__input--genero" for="mujer">Mujer</label>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form__container--tipo-comprador">
+                        <label for="mayorminor" id="mayorminor" class="form__label">Tipo Comprador:</label>
+                        <select id="tipo-comprador" name="mayorminor" class="form__select">
+                            <option value="" disabled selected>--Seleccionar--</option>
+                            <option value="mayorista">Mayorista</option>
+                            <option value="minorista">Minorista</option>
+                        </select>
+
+
+                    </div>
                     </div>
 
                     <div class="form__contact-container">
                         <legend class="form_legend form_legend--contact">Contacto</legend>
                         <div class="form__container">
-                            <label for="email" class="form__label">Email:</label>
-                            <input class="form__input" type="email" id="email" name="email" placeholder="Tu email...">
-                            <span class="error"></span>
+                            <div class="form__container-top">
+                                <label for="email" class="form__label">Email:</label>
+                                <input class="form__input" type="email" id="email" name="email"
+                                    placeholder="Tu email...">
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form__container">
+                            <div class="form__container-top">
+                                <label for="telefono" class="form__label">Teléfono:</label>
+                                <input class="form__input" type="tel" id="telefono" name="telefono"
+                                    placeholder="Tu teléfono...">
+                            </div>
+
                         </div>
 
 
                         <div class="form__container">
-                            <label for="telefono" class="form__label">Teléfono:</label>
-                            <input class="form__input" type="tel" id="telefono" name="telefono"
-                                placeholder="Tu teléfono...">
-                            <span class="error"></span>
+                            <div class="form__container-top">
+                                <label for="direccion" class="form__label">Dirección:</label>
+                                <input class="form__input" type="text" id="direccion" name="direccion"
+                                    placeholder="Tu dirección...">
+                            </div>
                         </div>
 
-                        <div class="form__container">
-                            <label for="direccion" class="form__label">Dirección:</label>
-                            <input class="form__input" type="text" id="direccion" name="direccion"
-                                placeholder="Tu dirección...">
-                            <span class="error"></span>
-                        </div>
+                    </div>
+                    <div class="form__btns">
+                        <button type="submit" class="form_btn form_btn-send">Registrarse</button>
+                        <a href="../pages/login.html" class="form__btn-crear-cuenta">¿Ya tienes una cuenta?</a>
                     </div>
                 </fieldset>
-                <div class="form__btns">
-                    <button href="#" class="form_btn form_btn-send">Registrarse</button>
-                    <a href="../pages/login.html" class="form__btn-crear-cuenta">¿Ya tienes una cuenta?</a>
-                </div>
             </form>
-
         </section>
     </main>
 
@@ -182,8 +206,8 @@
         </div>
 
     </footer>
-
-    <!-- <script src="../js/js.js"></script> -->
+    <script src="../js/menuHambur.js"></script>
+    <script src="../js/modoOscuro.js"></script>
     <script src="../js/validar-form.js"></script>
 </body>
 
