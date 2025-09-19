@@ -1,7 +1,23 @@
 :root {
+	--color-fondo: #ffffff;
+	--color-texto: #22503d;
 	--color-primario: #bfd7cd;
 	--color-secundario: #4aad84;
 	--color-terciario: #22503d;
+
+	--color-card: #e1e1e1;
+	--color-border: #c2c2c2;
+	--color-btn-bg: var(--color-terciario);
+	--color-btn-text: #ffffff;
+}
+
+body.modo-oscuro {
+	--color-fondo: #000000;
+	--color-texto: #bfd7cd;
+	--color-card: #1f1f1f;
+	--color-border: #bfd7cd;
+	--color-btn-bg: #4aad84;
+	--color-btn-text: #ffffff;
 }
 
 * {
@@ -19,6 +35,31 @@ body {
 	font-family: "Libertinus Serif", serif;
 	overflow-x: hidden;
 	z-index: 1;
+	background-color: var(--color-fondo);
+	color: var(--color-texto);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--color-texto);
+}
+
+p,
+label,
+legend,
+imput
+
+ {
+	color: var(--color-texto);
+}
+
+select {
+	background-color: var(--color-fondo);
+	color: var(--color-texto);
 }
 
 a {
@@ -56,6 +97,7 @@ textarea {
 
 input,
 textarea {
+	color: var(--color-texto);
 	width: 100%;
 	outline: none;
 	background: transparent;
@@ -67,20 +109,28 @@ textarea {
 .subtitle {
 	font-size: 3.5rem;
 	text-align: center;
-	color: var(--color-terciario);
 	/* border-bottom: 2px solid var(--color-terciario); */
 }
 
 .sub-subtitle {
 	font-size: 1rem;
 	text-align: center;
-	color: rgb(68, 68, 68);
 }
 
 .container {
 	max-width: 1400px;
 	width: 90%;
 	margin: 0 auto;
+}
+
+.container__product {
+	background-color: var(--color-card);
+	border: 1px solid var(--color-border);
+}
+
+.info__btn {
+	background-color: var(--color-btn-bg);
+	color: var(--color-btn-text);
 }
 
 /* HEADER */
@@ -146,6 +196,7 @@ textarea {
 }
 
 .navbar__link {
+	color: #000;
 	font-size: 1.8rem;
 	padding: 1rem;
 	border-radius: 15px;
@@ -165,6 +216,7 @@ textarea {
 }
 
 .navbar__title {
+	color: #000;
 	font-size: 1.2rem;
 	font-weight: bold;
 }
@@ -178,6 +230,7 @@ textarea {
 
 .icons-zindex {
 	z-index: 60;
+	cursor: pointer;
 }
 
 .iconos-fijos {
@@ -234,6 +287,7 @@ table {
 	gap: 1rem;
 	text-align: left;
 	width: 100%;
+	color: #000;
 
 }
 
@@ -271,6 +325,10 @@ table tbody {
 	padding: .5rem 0;
 }
 
+th {
+	color: #000;
+}
+
 table tbody tr {
 
 	display: contents;
@@ -290,6 +348,7 @@ table tbody tr td {
 }
 
 .td-nombre {
+
 	text-align: left;
 }
 
@@ -316,13 +375,13 @@ table tbody tr td {
 /* HERO */
 
 .hero {
-  position: relative;
-  width: 100%;
+	position: relative;
+	width: 100%;
 	padding-top: 6rem;
 }
 
 .hero__descuento {
-	color: white;
+
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -339,6 +398,7 @@ table tbody tr td {
 }
 
 .descuento__texto {
+	color: #ffffff;
 	font-size: 1.3rem;
 	text-align: left;
 	position: relative;
@@ -355,6 +415,7 @@ table tbody tr td {
 
 .hero__icon {
 	font-size: 2.5rem;
+	color: #fff;
 }
 
 /* GRID */
@@ -370,7 +431,7 @@ table tbody tr td {
 }
 
 .container__product {
-	background-color: #efefef;
+	color: var(--color-card);
 	border: 1px solid rgb(194, 194, 194);
 	border-radius: 10px;
 	padding: 1rem;
