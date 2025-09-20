@@ -19,13 +19,6 @@ Descuentos y promociones activas<br>
 * Main con grilla de productos<br>
 Visualización de zapatillas en formato grid, con diseño responsivo.<br>
 
-* Secciones informativas<br>
-Productos más usados y destacados de la semana<br>
-
-* Secciones adicionales<br>
-Más vendidos<br>
-Destacados de la semana<br>
-
 * Formulario de contacto<br>
 Para consultas y soporte al cliente.<br>
 
