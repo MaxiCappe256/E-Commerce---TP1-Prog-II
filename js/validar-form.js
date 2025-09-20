@@ -31,9 +31,9 @@ inputs.forEach(input => {
       }
     }
 
-    if (input.id === "apellido") {
-      if (input.value.trim().length < 3) {
-        mensaje.textContent = "El apellido debe contener al menos 3 caracteres"
+    if (input.id === "password") {
+      if (input.value.trim().length < 6) {
+        mensaje.textContent = "La contraseña debe contener al menos 6 caracteres"
         mensaje.classList.add('error');
       } else {
         mensaje.textContent = "";
@@ -127,6 +127,13 @@ formulario.addEventListener('submit', (e) => {
         valido = false;
       }
     }
+
+    if (input.id === "password") {
+      if (input.value.trim().length < 6) {
+        mensaje.textContent = "La contraseña debe contener al menos 6 caracteres"
+        mensaje.classList.add('error');
+      } 
+    }
   })
 
   const generoSeleccionado = document.querySelector('input[name="genero"]:checked');
@@ -149,6 +156,7 @@ formulario.addEventListener('submit', (e) => {
       apellido: document.getElementById('apellido').value,
       email: document.getElementById('email').value,
       edad: document.getElementById('edad').value,
+      contraseña: document.getElementById('password').value,
       genero: document.querySelector('input[name="genero"]:checked').value,
       tipoComprador: document.getElementById("tipo-comprador").value
     }
