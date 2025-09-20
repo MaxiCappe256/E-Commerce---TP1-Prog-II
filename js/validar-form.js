@@ -10,7 +10,7 @@ let usuariosGuardados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
 
 inputs.forEach(input => {
-  input.addEventListener('blur', () => {
+  input.addEventListener('input', () => {
     if (input.id === "nombre") {
       if (input.value.trim().length < 3) {
         mensaje.textContent = "El nombre debe contener al menos 3 caracteres"
@@ -41,16 +41,6 @@ inputs.forEach(input => {
       }
     }
 
-    if (input.id === "email") {
-      if (!input.value.includes("@") || !input.value.includes(".")) {
-        mensaje.textContent = "Formato de email inválido";
-        mensaje.classList.add('error');
-      } else {
-        mensaje.textContent = "";
-        mensaje.classList.remove('error');
-      }
-    }
-
     if (input.id === "edad") {
       if (!input.value) {
         mensaje.textContent = "Debes ingresar tu fecha de nacimiento";
@@ -60,6 +50,18 @@ inputs.forEach(input => {
         mensaje.classList.remove('error');
       }
     }
+  
+  input.addEventListener('blur', () => {
+    if (input.id === "email") {
+      if (!input.value.includes("@") || !input.value.includes(".")) {
+        mensaje.textContent = "Formato de email inválido";
+        mensaje.classList.add('error');
+      } else {
+        mensaje.textContent = "";
+        mensaje.classList.remove('error');
+      }
+    }
+  })
   })
 
   if (input.type === "radio" && input.name === "genero") {
