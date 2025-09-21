@@ -7,6 +7,7 @@ const listaCarrito = document.querySelector('#lista-carrito');
 const vaciarCarritoBtn = document.querySelector('.vaciar-carrito-btn');
 const btnAgregar = document.querySelectorAll('.btn-agregar');
 
+// Creamos array vacio para el carrito
 let articulosCarrito = [];
 
 // Guardar en localStorage
@@ -42,18 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
     obtenerCarritoLocalStorage();
 });
 
-
+// se le agrega o quita la clase active al clickear el icono carrito
 iconoCarrito.addEventListener('click', (e) => {
     e.preventDefault();
     carritoContenedor.classList.toggle('active')
 })
 
+// deja de mostrar el carrito si se clickeo fuera
 document.addEventListener('click', (e) => {
     if (!listaCarrito.contains(e.target) && !iconoCarrito.contains(e.target)) {
         carritoContenedor.classList.remove('active');
     }
 });
 
+// vacia todos los productos
 vaciarCarritoBtn.addEventListener('click', (e) => {
     e.preventDefault();
     articulosCarrito = [];
@@ -61,6 +64,7 @@ vaciarCarritoBtn.addEventListener('click', (e) => {
     guardarCarritoLocalStorage();
 })
 
+// limpia la lista del carrito
 function limpiarHTML() {
     if (!listaCarrito) return;
     while (listaCarrito.firstChild) {
@@ -68,6 +72,7 @@ function limpiarHTML() {
     }
 }
 
+// agrega los productos al carrito, obtenemos como parametro producto que viene del productos-index.js porque trae la informacion del producto del boton que clickeo el usuario gracias al id
 function agregarAlCarrito(producto) {
     const existe = articulosCarrito.some(p => p.id === producto.id)
 

@@ -18,7 +18,8 @@ fetch("https://sneakers-api-cmkf.onrender.com/")
                 </div>
             `
         }
-
+        // El listener se hace aca porque si lo hacemos en el archivo de carrito.js no existen los botones, no los va a poder traer
+        
         // Saber que producto se clickeo
         // Guardamos todos los botones en una variable
         const botonesAgregar = document.querySelectorAll('.btn-agregar');
