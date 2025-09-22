@@ -5,7 +5,7 @@ const productId = parseInt(params.get('id'));
 fetch("https://sneakers-api-cmkf.onrender.com/get-sneaker/" + productId)
     .then(response => response.json())
     .then(product => {
-        console.log("Producto recibido:", product);
+        console.log("Producto:", product);
         if (!product || !product.image) {
             console.error("El producto no existe o no tiene imágenes:", product);
             producto.innerHTML = `<p>Producto no encontrado.</p>`;
